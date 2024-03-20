@@ -2,6 +2,9 @@
 
 Implementation of disjoint set in Go. For the algorithm, see https://en.wikipedia.org/wiki/Disjoint-set_data_structure
 
+
+## Example
+
 ```go
 package main
 
@@ -27,7 +30,7 @@ func main() {
 	fmt.Println(setsList)
 }
 ```
-
+`stdout:`
 ```text
 true
 false
@@ -40,14 +43,14 @@ false
 
 Instantiates a new sets struct.
 
-### `(* DisjointSets[K]) Union(k1, k2 K)`
+### `(*DisjointSets[K]) Union(k1, k2 K)`
 
 Unions two sets contain the provided keys, keys not exist will be created automatically as single-key sets.
 
-### `(* DisjointSets[K]) Find(key K) K`
+### `(*DisjointSets[K]) Find(key K) K`
 
 Returns the root key of a set contains the provided key.
 
-### `(* DisjointSets[K]) InSameSet(k1, k2 K) bool`
+### `(*DisjointSets[K]) InSameSet(k1, k2 K) bool`
 
 Returns whether the set contains `k1` is exactly the set contains `k2`. Equals to `Find(k1) == Find(k2)`.
