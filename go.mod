@@ -1,4 +1,4 @@
-module github.com/rickonono3/generic-disjoint-set
+module github.com/rickonono3/ufset
 
 go 1.18
 
