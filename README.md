@@ -1,4 +1,5 @@
 # Generic Disjoint Sets (Union-Find Sets)
+[![Go](https://github.com/RickoNoNo3/ufset/actions/workflows/go.yml/badge.svg?branch=master)](https://github.com/RickoNoNo3/ufset/actions/workflows/go.yml)
 
 Implementation of disjoint set in Go. For the algorithm, see https://en.wikipedia.org/wiki/Disjoint-set_data_structure
 

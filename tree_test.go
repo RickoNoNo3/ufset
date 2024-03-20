@@ -1,4 +1,4 @@
-package generic_disjoint_set
+package ufset
 
 import (
 	"fmt"
