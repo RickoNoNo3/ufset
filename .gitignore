@@ -1,0 +1,13 @@
+/build
+/.idea
+/.vscode
+generic-disjoint-set.iml
+
+*.DS_Store
+_DS_Store
+.DS_Store
+
+*.swp
+.*.swp
+_swp
+.swp
