@@ -31,10 +31,10 @@ func main() {
 	fmt.Println(setsList)
 
 	sets2 := ufset.New[string]()
-	sets.Union("hello", "world")
-	sets.Union("world", "peace")
-	sets.Union("foo", "bar")
-	fmt.Println(sets.Find("hello"), sets.Find("peace"), sets.Find("bar"))
+	sets2.Union("hello", "world")
+	sets2.Union("world", "peace")
+	sets2.Union("foo", "bar")
+	fmt.Println(sets2.Find("hello"), sets2.Find("peace"), sets2.Find("bar"))
 }
 ```
 `output:`
