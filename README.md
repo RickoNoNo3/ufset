@@ -1,7 +1,7 @@
 # Generic Disjoint Sets (Union-Find Sets)
 [![Go](https://github.com/RickoNoNo3/ufset/actions/workflows/go.yml/badge.svg?branch=master)](https://github.com/RickoNoNo3/ufset/actions/workflows/go.yml)
 
-Implementation of disjoint set in Go. For the algorithm, see https://en.wikipedia.org/wiki/Disjoint-set_data_structure
+Implementation of disjoint set in Go(>= 1.18 with generic features). For the algorithm, see https://en.wikipedia.org/wiki/Disjoint-set_data_structure
 
 
 ## Example
@@ -24,18 +24,25 @@ func main() {
 	fmt.Println(sets.InSameSet(0, 2))
 	fmt.Println(sets.InSameSet(0, 3))
 
-	setsList := make([]int, 5)
-	for i := 0; i < 5; i++ {
+	setsList := make([]int, 6)
+	for i := 0; i < 6; i++ {
 		setsList[i] = sets.Find(i)
 	}
 	fmt.Println(setsList)
+
+	sets2 := ufset.New[string]()
+	sets.Union("hello", "world")
+	sets.Union("world", "peace")
+	sets.Union("foo", "bar")
+	fmt.Println(sets.Find("hello"), sets.Find("peace"), sets.Find("bar"))
 }
 ```
-`stdout:`
+`output:`
 ```text
 true
 false
-[0, 0, 0, 3, 3]
+[0, 0, 0, 3, 3, 3]
+["hello", "hello", "foo"]
 ```
 
 ## Methods
