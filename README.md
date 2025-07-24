@@ -51,6 +51,10 @@ false
 
 Instantiates a new sets struct.
 
+### `ufset.NewRigid[K]() (*DisjointSets[K comparable])`
+
+Instantiates a new sets struct which does not use path compression or union by rank.
+
 ### `(*DisjointSets[K]) Union(k1, k2 K)`
 
 Unions two sets contain the provided keys, keys not exist will be created automatically as single-key sets.
@@ -62,3 +66,11 @@ Returns the root key of a set contains the provided key.
 ### `(*DisjointSets[K]) InSameSet(k1, k2 K) bool`
 
 Returns whether the set contains `k1` is exactly the set contains `k2`. Equals to `Find(k1) == Find(k2)`.
+
+### `(*DisjointSets[K]) IsCompressed() bool`
+
+Returns whether the disjoint sets use path compression.
+
+### `ufset.GetTree[K](s *DisjointSets[K]) []*TreeNode[K]`
+
+Returns a forest of tree nodes representing the structure of the disjoint sets. Only available without path compression (i.e. a `DisjointSets` created by `ufset.NewRigid`).
