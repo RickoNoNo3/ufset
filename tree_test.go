@@ -1,9 +1,11 @@
 package ufset
 
 import (
+	"encoding/json"
 	"fmt"
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func print(sets *DisjointSets[int]) {
@@ -16,6 +18,18 @@ func print(sets *DisjointSets[int]) {
 
 func Test1(t *testing.T) {
 	sets := New[int]()
+	BasicTest(t, sets)
+}
+
+func Test2(t *testing.T) {
+	sets := NewRigid[int]()
+	BasicTest(t, sets)
+	tree, err := json.Marshal(GetTree(sets))
+	assert.NoError(t, err)
+	fmt.Println(string(tree))
+}
+
+func BasicTest(t *testing.T, sets *DisjointSets[int]) {
 	sets.add(0)
 	sets.add(1)
 	sets.add(2)
